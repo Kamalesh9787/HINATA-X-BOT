@@ -182,12 +182,9 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
             btn = [[InlineKeyboardButton(text=f"{file.file_name}", callback_data=f'{pre}#{req}#{file.file_id}'),
                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'{pre}#{file.file_id}')] for file in files ]    
 
-    btn.insert(0,
-               [
-                   InlineKeyboardButton("Select", callback_data=f"send_fall#files#{key}#{offset}"),
-                   InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs​", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
+        btn.insert(0, [InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs​", callback_data=f"languages#{search.replace(' ', '_')}#{key}")
                ]
-                    )
+                  )
     if offset != "":
         key = f"{message.id}"
         temp.PM_BUTTONS[key] = search
