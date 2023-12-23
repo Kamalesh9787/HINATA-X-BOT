@@ -15,6 +15,12 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
 
+BUTTONS = {}
+SPELL_CHECK = {}
+FILTER_MODE = {}
+LANGUAGES = ["malayalam", "tamil", "english", "hindi", "telugu", "kannada"]
+
+
 @Client.on_message(filters.private & filters.text & filters.chat(AUTH_USERS) if AUTH_USERS else filters.text & filters.private)
 async def auto_pm_fill(b, m):
     if PMFILTER:       
