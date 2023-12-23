@@ -57,7 +57,7 @@ async def pm_next_page(bot, query):
                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'pmfile#{file.file_id}')] for file in files ]
 
     btn.insert(0, [InlineKeyboardButton("🔆 OM_links 🔆", "howdl")])
-                   InlineKeyboardButton(" ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}#{req}#{offset}")]
+                   InlineKeyboardButton(" ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}#{req}#{offset}"),
     if 0 < offset <= 10: off_set = 0
     elif offset == 0: off_set = None
     else: off_set = offset - 10
